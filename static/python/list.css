@@ -1,0 +1,50 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #2d2d2d;
+    user-select: none;
+}
+
+th, td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+thead th {
+    background-color: #222428;
+    color: #cccccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #333333;
+}
+
+
+
+tbody tr:hover {
+    
+    transition: all 1s;
+    background-color: #28287b94;
+}
+.nomi{
+    color: aliceblue;
+    text-decoration: none;
+}
+.nomi:hover{
+    text-decoration: underline;
+}
+
+.icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+
+

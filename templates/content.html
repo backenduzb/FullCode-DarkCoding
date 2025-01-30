@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'addpost.css' %}">
+<div class="con">
+    <form class="con2" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="nomi" placeholder="nomi">
+        <div class="hech-nima">
+            {{ form.nimaga }}
+            {{ form.tili }}
+            {{ form.turlari }}
+        </div>
+        <textarea class="izoh" type="text" name="izoh" placeholder="Nima qladi?"></textarea>
+        <textarea class="kodi" type="text" name="kod" placeholder="kod"></textarea>
+        <button type="submit">Yaratish</button>
+    </form>
+</div>
+{% endblock content %}

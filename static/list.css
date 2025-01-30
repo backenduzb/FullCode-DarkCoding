@@ -1,0 +1,72 @@
+.box {
+    text-align: left;
+    padding: 20px;
+    margin: 20px 0;
+    background-image: linear-gradient(45deg, rgba(9, 9, 89, 0.56), rgba(81, 81, 86, 0.451));
+    border-radius: 10px;
+    box-shadow: rgba(9, 32, 235, 0.573) 0px 4px 12px, rgba(24, 19, 180, 0.3) 0px 7px 13px -3px, rgba(35, 35, 255, 0.425) 0px -3px 0px inset;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+    overflow: hidden;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(9, 32, 235, 0.8) 0px 6px 14px, rgba(24, 19, 180, 0.5) 0px 9px 16px -3px, rgba(35, 35, 255, 0.6) 0px -3px 0px inset;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.box img:hover {
+    transform: scale(1.1);
+}
+button {
+    margin-top: 20px;
+    width: 70%;
+    padding: 12px;
+    background-image: linear-gradient(rgba(77, 77, 252, 0.863),rgb(11, 11, 255));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00214fb8;
+}
+.box p {
+    font-size: 15px;
+    color: #fff;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.box p:first-of-type {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e3e3e3;
+}
+
+.box p:last-of-type {
+    text-align: right;
+    font-style: italic;
+    color: #cfcfcf;
+}
+
+.empty {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+

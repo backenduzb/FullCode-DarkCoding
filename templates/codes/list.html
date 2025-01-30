@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <div class="item_wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th style="border-top-left-radius: 10px;">ID</th>
+                    <th>Nomi</th>
+                    <th>Toifasi</th>
+                    <th style="border-top-right-radius: 10px;">Nima uchun</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in content %}
+                <tr>
+                    <td>
+                        <a>{{ i.id }}</a>
+                    </td>
+                    <td>
+                        <a class="nomi" href="{{ i.id }}/">{{ i.nomi }}</a>
+                    </td>
+                    <td>
+                        <a>{{ i.turlari }}</a>
+                    </td>
+                    <td>
+                        <a>{{ i.nimaga }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+                
+               
+            </tbody>
+           
+        </table>
+        <link rel="stylesheet" href="{% static 'python/list.css' %}">
+        
+    </div>
+    
+{% endblock content %}

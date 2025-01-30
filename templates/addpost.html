@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'register/login.css' %}">
+<div class="con">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.image }} 
+        <input type="text" name="text" value="{{ form.text.value|default:'' }}"> 
+        <input type="datetime" name="date" value="{{ form.date.value|date:'Y-m-d' }}">
+        <button type="submit">Yuborish</button>
+    </form>
+</div>
+{% endblock content %}

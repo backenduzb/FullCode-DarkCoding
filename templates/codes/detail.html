@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+    <style>
+        .copy-button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        
+        #codeEditor {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>  
+    <div class="item_wrap"> 
+        <div class="item" style="user-select: none;">
+            <h1>{{ post.nomi }}</h1>
+        </div>
+
+        <div class="item" style="user-select: none;">
+            <h3>Vazifasi:</h3>
+            <p style="font-size: 20px;">{{ post.izoh }}</p>
+        </div>
+
+        <div class="item editor-container">
+            <textarea id="codeInput" name="code2" style="display:none;">{{ post.kod }}</textarea>
+            
+            <div id="codeEditor"></div> 
+            <button class="copy-button" onclick="copyCode()"><span><svg style="height: 20; width: 20px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z"/></svg></span><span>Olish</span></button>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.js"></script>
+    <script>
+        const editor = CodeMirror(document.getElementById("codeEditor"), {
+            lineNumbers: true,
+            mode: "python",
+            theme: "dracula",
+            tabSize: 4,
+            lineWrapping: true
+        });
+
+        editor.setValue(document.getElementById("codeInput").value);
+
+        function copyCode() {
+            const code = editor.getValue();
+            navigator.clipboard.writeText(code).then(() => {
+                alert("Code copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
+</body>
+{% endblock content %}

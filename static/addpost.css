@@ -1,0 +1,80 @@
+.con{
+    height: 80%;
+    width: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.con2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+    text-align: start;
+    width: 80%;
+    height: 90%;
+    padding: 20px;
+    background-image: linear-gradient(45deg,rgba(9, 9, 89, 0.56),rgba(81, 81, 86, 0.451));
+    border-radius: 10px;
+    box-shadow: rgba(9, 32, 235, 0.573) 0px 2px 8px, rgba(24, 19, 180, 0.3) 0px 7px 13px -3px, rgba(35, 35, 255, 0.425) 0px -3px 0px inset;
+}
+
+.kodi{
+    height: 30%;
+
+}
+.izoh{
+    height: 10%;
+}
+
+.con .con2 button {
+    margin-top: 10px;
+    width: 40%;
+    padding: 12px;
+    background-image: linear-gradient(rgba(77, 77, 252, 0.863),rgb(11, 11, 255));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00214fb8;
+}
+
+.hech-nima{
+    height: 15%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+select{
+    border: none;
+    border-radius: 5px; 
+    height: 50%;
+    width: 70%;
+}
+input,textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid blue;
+    outline: none;
+}
+
+input[type="hidden"] {
+    margin-top: 20px;
+    display: none;
+}
